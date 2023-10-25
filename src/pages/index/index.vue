@@ -12,7 +12,7 @@
         <view class="item-option-list">
           <view
             class="option-item"
-			:class="{active:item.chceked}"
+            :class="{ active: item.chceked }"
             v-for="item in optionList1"
             :key="item.value"
             @click="toggleChecked(item)"
@@ -24,7 +24,7 @@
   </view>
 </template>
 
-<script >
+<script>
 import Vue from 'vue'
 
 export default Vue.extend({
@@ -34,28 +34,27 @@ export default Vue.extend({
         {
           label: '是',
           value: '是',
-		  chceked: false
+          chceked: false
         },
         {
           label: '否',
           value: '否',
-		  chceked: false
-
+          chceked: false
         }
       ]
     }
   },
   onLoad () {},
   methods: {
-	// 切换选项的选中状态
-	toggleChecked(e){
-		this.optionList1.forEach(item => {
-			item.chceked = false
-			if(e.value === item.value) {
-				item.chceked = true
-			}
-		})
-	}
+    // 切换选项的选中状态
+    toggleChecked (e) {
+      this.optionList1.forEach(item => {
+        item.chceked = false
+        if (e.value === item.value) {
+          item.chceked = true
+        }
+      })
+    }
   }
 })
 </script>
@@ -104,18 +103,17 @@ $mainColor: #789def;
       .option-item {
         width: 200rpx;
         height: 50rpx;
-		line-height: 50rpx;
+        line-height: 50rpx;
         display: flex;
         align-items: center;
         justify-content: center;
-		border: 1px solid $mainColor;
-		color: $mainColor;
-		border-radius: 10rpx;
-		&.active {
-			background-color: $mainColor;
-			color: #fff;
-		}
-
+        border: 1px solid $mainColor;
+        color: $mainColor;
+        border-radius: 10rpx;
+        &.active {
+          background-color: $mainColor;
+          color: #fff;
+        }
       }
     }
   }
